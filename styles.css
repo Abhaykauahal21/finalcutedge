@@ -1,0 +1,672 @@
+
+        /* ========================================================== */
+        /* BASE & RESET STYLES (FROM WAPARS HOMEPAGE) */
+        /* ========================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #333;
+        }
+
+        /* ------------ HEADER (FROM WAPARS HOMEPAGE) ------------ */
+        header {
+            width: 100%;
+            padding: 18px 60px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: #111;
+            font-size: 15px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-right: 150px;
+        }
+
+        .icon-bar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon {
+            width: 38px;
+            height: 38px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .connect-btn {
+            padding: 8px 16px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* ------------ HERO SECTION (FROM WAPARS HOMEPAGE) ------------ */
+        .hero {
+            width: 100%;
+            padding: 80px 60px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 700px; /* Ensure enough space for absolute images */
+        }
+
+        .left-img {
+            width: 420px;
+            border-radius: 90px 0 90px 0;
+            position: absolute;
+            left: 43px;
+            top: 82px;
+            transform: rotate(-110deg);
+            z-index: 1; /* Keep images behind the main text */
+        }
+
+        .right-img {
+            width: 342px;
+            border-radius: 120px 0 120px 0;
+            position: absolute;
+            right: 20px;
+            top: 200px;
+            z-index: 1; /* Keep images behind the main text */
+        }
+
+        .center-box {
+            text-align: left;
+            width: 55%;
+            margin-left: 80px; /* moves text slightly right like screenshot */
+            position: relative;
+            z-index: 2; /* Keep text above the absolute images */
+        }
+
+        .small-steps {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            margin-left: 616px; /* shift like screenshot */
+        }
+
+        .small-steps img {
+            width: 75px;
+            height: 75px;
+            border-radius: 18px;
+            border: 1px solid #ccc;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            font-weight: 720;
+            line-height: 1.15;
+            margin-left: 75px;
+            margin-top: -80px;
+        }
+
+        .black-tag {
+            background: #000;
+            color: #fff;
+            padding: 10px 25px;
+            display: inline-block;
+            font-size: 55px;
+            border-radius: 10px;
+            transform: rotate(-3deg);
+            margin-top: 8px;
+            margin-left: 190px;
+        }
+
+        .hero p {
+            color: #444;
+            font-size: 14px;
+            width: 70%;
+            margin-top: 108px;
+            margin-left: -290px;
+            line-height: 1.6;
+        }
+
+        .scroll-btn {
+            width: 48px;
+            height: 48px;
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px auto 40px auto; /* Added extra bottom margin */
+            font-size: 22px;
+        }
+
+        /* ------------ RESPONSIVE (FROM WAPARS HOMEPAGE) ------------ */
+        @media(max-width:900px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px;
+                min-height: auto;
+            }
+
+            .left-img, .right-img {
+                position: static;
+                width: 100%;
+                margin-bottom: 20px;
+                transform: none; /* Remove rotations on mobile */
+            }
+
+            .center-box {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .hero h1 {
+                margin-left: 0;
+                font-size: 42px;
+            }
+
+            .black-tag {
+                margin-left: 0;
+                font-size: 34px;
+            }
+
+            .hero p {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .small-steps {
+                margin-left: 0;
+                justify-content: center;
+            }
+            
+            /* Flowchart Responsive Adjustments */
+            .flowchart-container {
+                padding: 20px;
+            }
+            .flow-step {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .flow-image, .flow-image.placeholder {
+                width: 100%;
+                height: 150px;
+                margin-bottom: 15px;
+                order: -1 !important; /* Image first on mobile */
+            }
+            .flow-step .flow-content {
+                order: 0 !important;
+                padding: 0 !important;
+                text-align: center !important;
+            }
+            .step-text {
+                max-width: none;
+            }
+             /* Hide lines on small screens if they don't adapt well */
+            .flow-line {
+                display: none; 
+            }
+        }
+        
+        
+        /* ========================================================== */
+        /* FLOWCHART STYLES (MODIFIED) */
+        /* ========================================================== */
+        .flowchart-container {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 20px;
+            max-width: 1150px;
+            border-radius: 20px;
+            border: 2px solid #555;
+            margin: 50px auto; /* Combined margin properties */
+            position: relative; /* Essential for positioning the connecting lines */
+            overflow: hidden; /* To keep the blurred border within the container */
+        }
+
+        .flowchart-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .flow-step {
+            display: flex;
+            /* Default for odd/even steps is handled below */
+            margin-bottom: 40px;
+        }
+
+        .flow-content {
+            flex-grow: 1;
+        }
+
+        /* Adjusted image width for flowchart steps */
+        .flow-image {
+            width: 38%; 
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Modified placeholder styling for the images in the flowchart */
+        .flow-image.placeholder {
+            height: 200px; 
+            background-color: transparent;
+            display: block;
+            border: 1px solid greenyellow; 
+            filter: blur(0.5px); 
+            box-shadow: 0 0 10px 2px greenyellow; 
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Styling for the actual image inside the placeholder div */
+        .flow-image.placeholder img { 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .step-label {
+            background-color: #4CAF50; /* Green label */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .step-text {
+            max-width: 300px;
+        }
+
+        /* Alternating layout for steps */
+        /* === MODIFIED ALIGNMENT FOR TOP ALIGNMENT === */
+        .flow-step:nth-child(odd) {
+            align-items: flex-start; /* Aligns the image and content to the top */
+        }
+        
+        .flow-step:nth-child(odd) .flow-content {
+            order: 2;
+            padding-left: 30px; 
+            text-align: left;
+        }
+
+        .flow-step:nth-child(odd) .flow-image {
+            order: 1;
+        }
+
+        /* === MODIFIED ALIGNMENT FOR TOP ALIGNMENT === */
+        .flow-step:nth-child(even) {
+            flex-direction: row-reverse;
+            align-items: flex-start; /* Aligns the image and content to the top */
+        }
+
+        .flow-step:nth-child(even) .flow-content {
+            /* padding-right: 30px;  */
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .recover-metal {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+
+        /* --- Connecting Line Styles --- */
+
+
+         :root {
+            --impact-outer-bg:#3b3938;
+            --impact-header-top:#1f1f1f;
+            --impact-header-bottom:#2d2c2c;
+            --impact-panel:#393634;
+            --impact-card:#e9e6e5;
+            --impact-muted:#9c9a99;
+            --impact-white:#ffffff;
+        }
+
+        .impact-section {
+            
+            display:flex;
+            justify-content:center;
+            padding:60px 18px 80px;
+        }
+
+        .impact-frame {
+            width:980px;
+            border-radius:68px;
+            background:linear-gradient(180deg,#4a4847,#3b3938);
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 12px 40px rgba(0,0,0,0.25);
+        }
+
+        .impact-top {
+            background:linear-gradient(180deg,var(--impact-header-top),var(--impact-header-bottom));
+            color:var(--impact-white);
+            padding:48px 64px 64px;
+            text-align:center;
+            position:relative;
+            font-family:'Inter','Arial',sans-serif;
+        }
+
+        .impact-eco {
+            position:absolute;
+            left:28px;
+            top:22px;
+            width:86px;
+            height:86px;
+            z-index:2;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .impact-eco svg { width:86px;height:86px;display:block; }
+
+        .impact-title {
+            font-size:38px;
+            font-weight:700;
+            margin-top:6px;
+            letter-spacing:0.2px;
+        }
+
+        .impact-desc {
+            margin:12px auto 24px;
+            color:rgba(255,255,255,0.85);
+            font-size:13px;
+            line-height:1.45;
+            max-width:780px;
+        }
+
+        .impact-stats {
+            margin-top:20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:18px;
+            padding:22px 12px 0;
+        }
+        .impact-stat {
+            flex:1;
+            text-align:center;
+        }
+        .impact-stat .impact-num {
+            font-size:64px;
+            font-weight:800;
+            line-height:1;
+            margin-bottom:10px;
+        }
+        .impact-stat .impact-lbl {
+            font-size:13px;
+            letter-spacing:1px;
+            font-weight:700;
+            color:rgba(255,255,255,0.92);
+        }
+        .impact-vsep {
+            width:1px;
+            height:82px;
+            background:rgba(255,255,255,0.12);
+        }
+
+        .impact-testimonials {
+            background:var(--impact-panel);
+            border-bottom-left-radius:68px;
+            border-bottom-right-radius:68px;
+            margin-top:-36px;
+            padding:44px 44px 56px;
+            position:relative;
+            z-index:1;
+            font-family:'Inter','Arial',sans-serif;
+        }
+
+        .impact-test-head {
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:26px;
+        }
+        .impact-test-head h2 {
+            color:var(--impact-white);
+            font-size:34px;
+            font-weight:700;
+        }
+        .impact-controls {
+            margin-left:auto;
+            display:flex;
+            gap:12px;
+            align-items:center;
+        }
+        .impact-circle-btn {
+            width:48px;
+            height:48px;
+            border-radius:50%;
+            display:inline-grid;
+            place-items:center;
+            border:none;
+            cursor:pointer;
+            font-weight:700;
+            box-shadow:0 2px 6px rgba(0,0,0,0.2);
+        }
+        .impact-circle-btn.black { background:#060606;color:#fff; }
+        .impact-circle-btn.white { background:#fff;color:#000; }
+
+        .impact-cards {
+            display:flex;
+            gap:26px;
+            align-items:flex-end;
+            padding-top:6px;
+        }
+        .impact-card {
+            background:var(--impact-card);
+            border-radius:26px;
+            padding:18px 20px 22px;
+            width:calc(50% - 13px);
+            position:relative;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+            min-height:150px;
+            border:1px solid rgba(0,0,0,0.06);
+        }
+        .impact-inner {
+            border-radius:18px;
+            padding:6px;
+        }
+        .impact-quote {
+            display:inline-block;
+            font-size:22px;
+            color:#7a7a79;
+            margin-bottom:8px;
+        }
+        .impact-msg {
+            color:#4b4846;
+            font-size:13px;
+            line-height:1.6;
+            margin-bottom:18px;
+        }
+        .impact-profile-row {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:10px;
+        }
+        .impact-profile-info h4 {
+            font-size:14px;
+            color:#222;
+            font-weight:700;
+            margin-bottom:4px;
+        }
+        .impact-profile-info p {
+            font-size:12px;
+            color:#7c7b7a;
+        }
+        .impact-avatar {
+            width:56px;
+            height:56px;
+            border-radius:50%;
+            overflow:hidden;
+            border:3px solid #fff;
+            box-shadow:0 6px 18px rgba(0,0,0,0.18);
+            flex-shrink:0;
+            transform:translateY(8px);
+            background:linear-gradient(180deg,#fff,#f0f0f0);
+        }
+
+        @media (max-width:1024px) {
+            .impact-frame { width:92%; }
+            .impact-stat .impact-num { font-size:52px; }
+            .impact-test-head h2 { font-size:30px; }
+        }
+        @media (max-width:760px) {
+            .impact-top { padding:28px 28px 36px; }
+            .impact-eco { display:none; }
+            .impact-stats { flex-direction:column; }
+            .impact-vsep { display:none; }
+            .impact-cards { flex-direction:column; }
+            .impact-card { width:100%; }
+            .impact-testimonials { padding:28px; }
+        }
+
+        .faq-section {
+    display: flex;
+    width: 100%;
+    padding: 60px 80px;
+    box-sizing: border-box;
+}
+
+/* Left Image */
+.faq-left img {
+    width: 420px;
+}
+
+/* Right Accordion */
+.faq-right {
+    flex: 1;
+    margin-left: 80px;
+}
+
+.faq-right h1 {
+    font-size: 38px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+/* Accordion Styling */
+.accordion-item {
+    border-bottom: 1px solid #c4c4c4;
+    padding: 18px 0;
+}
+
+.accordion-title {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    display: none;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Arrow Styling */
+.arrow {
+    transition: 0.3s;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .accordion-content {
+    display: block;
+}
+
+input[type="checkbox"]:checked ~ .accordion-title .arrow {
+    transform: rotate(180deg);
+}
+
+/* Footer Section */
+footer {
+    background: #000;
+    color: #fff;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left {
+    width: 30%;
+}
+
+.footer-left img {
+    width: 160px;
+}
+
+.footer-left p {
+    color: #ccc;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons img {
+    width: 26px;
+    filter: invert(100%);
+}
+
+/* Footer Columns */
+.footer-column h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+     
+
+      
+     
